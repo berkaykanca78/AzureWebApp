@@ -25,12 +25,12 @@ namespace AzureWebApp.API
 
             app.MapControllers();
 
-            //using (var scope = app.Services.CreateScope())
-            //{
-            //    var srv = scope.ServiceProvider;
-            //    var context = srv.GetRequiredService<ApplicationDbContext>();
-            //    context.Database.Migrate();
-            //}
+            using (var scope = app.Services.CreateScope())
+            {
+                var srv = scope.ServiceProvider;
+                var context = srv.GetRequiredService<ApplicationDbContext>();
+                context.Database.Migrate();
+            }
 
             app.Run();
         }

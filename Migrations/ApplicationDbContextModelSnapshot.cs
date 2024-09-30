@@ -68,7 +68,7 @@ namespace AzureWebApp.API.Migrations
                     b.HasOne("AzureWebApp.API.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
