@@ -19,7 +19,7 @@ jobs:
         dotnet-version: '8.0.x'
   
     - name: Restore
-      run: dotnet restore ./Todos.WebAPI.sln
+      run: dotnet restore ./AzureWebApp.API.sln
   
     - name: Build
       run: dotnet build ./AzureWebApp.API.sln --configuration Release
