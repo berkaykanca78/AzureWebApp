@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AzureWebApp.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240930235503_mg1")]
+    [Migration("20241001001012_mg1")]
     partial class mg1
     {
         /// <inheritdoc />
@@ -57,7 +57,7 @@ namespace AzureWebApp.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("Id");
 

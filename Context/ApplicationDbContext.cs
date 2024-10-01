@@ -17,6 +17,11 @@ namespace AzureWebApp.API.Context
              .WithMany(c => c.Products)
              .HasForeignKey(p => p.CategoryId)
              .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Product>()
+               .Property(p => p.Price)
+               .HasColumnType("decimal(18, 2)") // Or use .HasPrecision(18, 2)
+               .IsRequired();
         }
     }
 }
