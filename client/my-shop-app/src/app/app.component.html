@@ -1,0 +1,9 @@
+<div>
+  <h2>Fetched Data</h2>
+  <ul>
+    <li *ngFor="let item of data">
+      <strong>{{ item.title }}</strong> - {{ item.body }}
+    </li>
+  </ul>
+</div>
+<router-outlet />

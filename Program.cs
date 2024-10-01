@@ -16,6 +16,16 @@ namespace AzureWebApp.API
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("ProdConnection")));
 
+            builder.Services.AddCors(opt =>
+            {
+                opt.AddPolicy(name: "CorsPolicy", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
+
             var app = builder.Build();
 
             app.UseSwagger();
