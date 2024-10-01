@@ -21,6 +21,7 @@ namespace AzureWebApp.API
             app.UseSwagger();
             app.UseSwaggerUI();
             app.MapGet("/", () => "Welcome My API Home Page!");
+            app.MapGet("/about", () => "Welcome My API About Page!");
             app.UseAuthorization();
 
             app.MapControllers();
